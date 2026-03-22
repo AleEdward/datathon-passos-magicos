@@ -11,6 +11,7 @@ modelo = joblib.load("modelo_risco_defasagem.pkl")
 fase = st.selectbox("Fase", ["0", "1", "2", "3", "4", "5", "6", "7", "ALFA"])
 idade = st.number_input("Idade", 6, 25, 14)
 genero = st.selectbox("Gênero", ["Masculino", "Feminino"])
+instituicao = st.text_input("Instituição de ensino", "Escola pública")
 iaa = st.slider("IAA", 0.0, 10.0, 5.0)
 ieg = st.slider("IEG", 0.0, 10.0, 5.0)
 ips = st.slider("IPS", 0.0, 10.0, 5.0)
@@ -24,6 +25,7 @@ if st.button("Prever risco"):
         "Fase": fase,
         "Idade": idade,
         "Gênero": genero,
+        "Instituição de ensino": instituicao,
         "IAA": iaa,
         "IEG": ieg,
         "IPS": ips,
